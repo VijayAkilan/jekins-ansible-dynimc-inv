@@ -5,7 +5,7 @@ pipeline {
   label 'ansible'
   }
   environment {
-   AWS_EC2_PRIVATE_KEY=credentials('ec2-private-key') 
+   AWS_EC2_PRIVATE_KEY=credentials('AWSEC2PEMFILE') 
   }
   
   stages {
@@ -13,7 +13,7 @@ pipeline {
     //Get the Code from GitHub Repo
     stage('CheckOutCode'){
       steps{
-        git branch: 'master', credentialsId: 'aeeaa4ad-45b4-4c30-9401-586ac501a9bb', url: 'https://github.com/MithunTechnologiesDevOps/jekins-ansible-dynimc-inv.git'
+        git branch: "master" , credentialsId: 'bfc43ad4-9cf9-43ee-b900-4b7d0608e008', url: 'https://github.com/VijayAkilan/jekins-ansible-dynimc-inv.git'
       }
     }
      
